@@ -1,0 +1,150 @@
+<html>
+    <head>
+        <title>Log In Page</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body{
+                background: linear-gradient(to bottom, #ffffff, #580ebc);
+                color: #580ebc;
+            }
+            #outer{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background:white;
+                width:80%;
+                box-shadow:0px 0px 10px rgba(0,0,0,0.4);
+                height:75%;
+                padding:1% 1% 1% 1%;
+                
+
+            }
+            #innerl{
+                position:relative;
+                float: left;
+                width:47%;
+                padding : 0% 1% 1% 2%;
+
+
+            }
+            #innerr{
+                position:relative;
+                float: right;
+                width:47%;
+                padding:1% 1% 1% 1%;
+                top:20%;
+            
+                text-align:center;
+
+            }
+            #reg{
+                position: relative;
+                left:-10%;
+            }
+            #reg input{
+                width:50%;
+                height:7%;
+                outline: none;
+                border: 1px solid #580ebc;
+            }
+            #register{
+                width:23%;
+                height:7%;
+                background: #580ebc;
+                border-radius:20px 20px 20px 20px;
+                color:white;
+         
+            }
+            #null{
+                display: none;
+                width:0px;
+                height:0px;
+            }
+            #login{
+                width:23%;
+                height:7%;
+                background:white;
+                border-radius:20px 20px 20px 20px;
+                outline: none;
+                border: 1px solid #580ebc;
+                color:#580ebc;
+         
+            }
+            #comment{
+                color:red;
+            }
+            img{
+                position: relative;
+                left:10%;
+            }
+            
+
+        </style>
+        <script>
+            function match(){
+                a=document.getElementById("pass1").value;
+                b=document.getElementById("pass2").value;
+
+                if(a==b){
+                    name=document.getElementById("name").value;
+                    
+                    urle="welcome.html?name="+name;
+                    //urla=URL(urle);
+                    window.location.assign(urle);
+
+                }
+                else{
+                    document.getElementById("comment").innerHTML="Password Not Matching";
+                    
+
+                }
+
+            }
+            function send(){
+                document.getElementById("comment").innerHTML="No Account existing. Register first";
+
+
+
+            }
+            function generator(){
+                name=document.getElementById("name").value;
+                localStorage.setItem('name', name);
+
+            }
+        </script>
+
+
+
+
+    </head>
+    <body>
+        <div id="outer">
+            <div id="innerr">
+                
+                <form id="reg">
+                    <label id="comment"></label><br>
+                    <input type="text" id="name" placeholder="Name"  onkeypress="generator()"required ><br><br>
+
+                    <input type="text" id="null" placeholder="Email" required><br><br>
+                    <input type="email" id="email" placeholder="Email" required><br><br>
+                    
+                    <input type="password" id="pass1"placeholder="Password"required><br><br>
+                    
+                    <input type="password" id="pass2"placeholder="Confirm Password"required><br><br>
+                    
+
+                    <button id="login" value="LOG IN" onclick="send()">LOG IN</button>
+                    <button id="register" value="REGISTER" onclick="match()">REGISTER</button>
+                </form> 
+            </div>
+            <div id="innerl">
+                <h2>SAARANG'2024</h2>
+                <img src="Saarang.png"width="75%"height="75%">
+
+            </div>
+        </div>
+        
+    </body>
+</html>

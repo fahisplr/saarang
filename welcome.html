@@ -1,0 +1,96 @@
+
+<html>
+    <head>
+        <title>Welcome</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            html,body{
+                height:100%;
+                margin: 0;
+                padding: 0;
+                width:100%;
+                position:absolute;
+            }
+            body {
+                color: #580ebc;
+                position: absolute;
+                top: 3%;
+                font-family: Arial, sans-serif;
+                font-size: 16px;
+                line-height: 1.5;
+                width: 96%;
+                text-align: center;
+                background:  linear-gradient(to bottom, #ffffff, #580ebc);
+            }
+            #head {
+                position: absolute;
+                left: 3%;
+                top: 0%;
+                width:90%;
+                background-color: #ffffff;
+                padding: 2%;
+                box-shadow: 0 -10px 10px rgba(0, 0, 0, 0.4);
+                align-content: center;
+                width: 95%;
+                height: 70%;
+                border-radius:2% ;
+            }
+            #lt{
+                position:absolute;
+                left:20%;
+                top:25%;
+                width:23%;
+                text-align:left;
+            }
+            #rt {
+                position: absolute;
+                left: 50%;
+                top: 25%;
+                width: 23%;
+                text-align: left;
+            }
+
+            h1, h2, h3 {
+                margin: 0;
+            }
+            footer {
+                height:8%;
+                width:92%;
+                position:fixed;
+                top:85%;
+                left:3%;
+                background-color: #f7f7f7;
+                padding: 20px;
+                box-shadow: 0 -10px 10px rgba(0, 0, 0, 0.1);
+                text-align: center;
+}
+        </style>
+        <script>
+            window.onload=function namer(){
+                const urla=window.location.href;
+                const parts=urla.split('name=');
+                user=parts[1];
+                document.getElementById("hello").innerHTML="HELLO "+user;
+                
+            }
+        </script>
+    </head>
+    <body>
+        <div id="head">
+            <div id="lt">
+                <h1 id="hello"></h1>
+                <h3>Welcome to SAARANG'24</h3>
+                <p>Embrace The Rythm,Unleash the Art: Ignite the Spark of our Cultural Heart </p>
+            </div>
+            <div id="rt">
+                <img src="Saarang.png"width="75%"height="75%">
+            </div>
+
+        </div>
+        
+    <footer>
+        <p>&copy; 2023 Saarang'24</p>
+    </footer>
+    </body>
+</html>
